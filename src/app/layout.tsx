@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Anek_Devanagari } from "next/font/google";
 import "./globals.css";
-import { Analytics } from "@vercel/analytics/next";
+import { Analytics } from "@vercel/analytics/react";
 
 const anekDevanagari = Anek_Devanagari({
   subsets: ["devanagari"],
