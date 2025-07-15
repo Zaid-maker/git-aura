@@ -13,7 +13,7 @@ import {
   Linkedin,
   Share2,
 } from "lucide-react";
-import html2canvas from "html2canvas";
+import { toPng } from "html-to-image";
 import { createClient } from "@supabase/supabase-js";
 import { nanoid } from "nanoid";
 
@@ -413,35 +413,21 @@ const GitHubProfileCard = () => {
         }
       }
 
-      // Show loading state
       setIsGenerating(true);
-
       try {
-        // Use html2canvas to capture the card
-        const canvas = await html2canvas(profileRef.current, {
-          scale: 2, // Higher quality
-          backgroundColor: null, // Transparent background
-          logging: false,
-          useCORS: true, // Enable CORS for images
-          allowTaint: true,
-          onclone: (clonedDoc) => {
-            const clonedElement = clonedDoc.querySelector(
-              "[data-profile-card]"
-            ) as HTMLElement;
-            if (clonedElement) {
-              clonedElement.style.padding = "20px";
-            }
-          },
+        // Use html-to-image for high-quality PNG export
+        const dataUrl = await toPng(profileRef.current, {
+          cacheBust: true,
+          backgroundColor: undefined,
+          pixelRatio: 2,
+          skipFonts: false,
         });
-
-        // Convert to PNG
-        const dataUrl = canvas.toDataURL("image/png");
-
-        // Create download link
         const link = document.createElement("a");
         link.download = `${searchedUsername}-github-profile.png`;
         link.href = dataUrl;
+        document.body.appendChild(link);
         link.click();
+        document.body.removeChild(link);
       } finally {
         setIsGenerating(false);
       }
