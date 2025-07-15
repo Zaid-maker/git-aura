@@ -1,8 +1,41 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+![git-aura UI Preview](public/layout.png)
+
+_Preview of the git-aura user profile interface_
+
+# git-aura
+
+A modern, open-source web application built with [Next.js](https://nextjs.org/) and TypeScript. Designed for rapid development, scalability, and best-in-class developer experience.
+
+## Features
+
+- ⚡️ Next.js 14+ with App Router
+- 🛠 TypeScript for type safety
+- 🎨 Optimized font loading with `next/font` (Geist)
+- 💅 CSS/PostCSS for styling
+- 🔥 Hot reloading and fast refresh
+- 📦 Zero-config setup
+- 🚀 Ready for deployment on [Vercel](https://vercel.com/)
 
 ## Getting Started
 
-First, run the development server:
+Clone the repository:
+
+```bash
+git clone https://github.com/Anshkaran7/git-aura.git
+cd git-aura
+```
+
+Install dependencies:
+
+```bash
+npm install
+# or
+yarn install
+# or
+pnpm install
+```
+
+Run the development server:
 
 ```bash
 npm run dev
@@ -10,27 +43,31 @@ npm run dev
 yarn dev
 # or
 pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) to view the app.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Project Structure
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- `src/app/` – Main application code (pages, layouts, components)
+- `public/` – Static assets
+- `next.config.ts` – Next.js configuration
+- `tsconfig.json` – TypeScript configuration
 
-## Learn More
+## Contributing
 
-To learn more about Next.js, take a look at the following resources:
+Contributions are welcome! Please open issues or pull requests for improvements or bug fixes.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## License
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+This project is open source and available under the [MIT License](LICENSE).
 
-## Deploy on Vercel
+## Resources
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- [Next.js Documentation](https://nextjs.org/docs)
+- [Vercel Deployment Guide](https://nextjs.org/docs/app/building-your-application/deploying)
+- [Geist Font](https://vercel.com/font)
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
+
+> Inspired by the [git-aura](https://github.com/Anshkaran7/git-aura) project.
