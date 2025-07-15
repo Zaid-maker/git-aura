@@ -22,17 +22,16 @@ const defaultMetadata: Metadata = {
 };
 
 export async function generateMetadata(
-  { params, searchParams }: { params: any; searchParams: any },
+  { params, searchParams }: { params: Record<string, string>; searchParams: URLSearchParams },
   parent: ResolvingMetadata
 ): Promise<Metadata> {
-  const ogImage = searchParams.og_image;
+  const ogImage = searchParams.get("og_image");
 
   const openGraphImages = ogImage ? [{ url: ogImage }] : [];
 
   return {
     ...defaultMetadata,
     openGraph: {
-      ...defaultMetadata.openGraph,
       images: openGraphImages,
     },
   };
