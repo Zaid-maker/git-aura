@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Anek_Devanagari } from "next/font/google";
 import "./globals.css";
+import { Analytics } from "@vercel/analytics/next";
 
 const anekDevanagari = Anek_Devanagari({
   subsets: ["devanagari"],
@@ -29,6 +30,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${anekDevanagari.variable} font-sans antialiased`}>
         {children}
+        <Analytics />
       </body>
     </html>
   );
