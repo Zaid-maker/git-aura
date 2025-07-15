@@ -460,8 +460,8 @@ const GitHubProfileCard = () => {
           text
         )}&url=${encodeURIComponent(shareUrl.toString())}`;
       } else if (platform === "linkedin") {
-        shareLink = `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(
-          shareUrl.toString()
+        shareLink = `https://www.linkedin.com/sharing/share-offsite/?text=${encodeURIComponent(
+          `${text} ${shareUrl.toString()}`
         )}`;
       }
 
